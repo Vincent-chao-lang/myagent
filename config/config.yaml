@@ -1,0 +1,96 @@
+# ============================================
+# PyAgent 配置文件
+# ============================================
+# 说明：
+# - 简单配置（字符串、数字）请在 .env 中设置
+# - 本文件只保留无法用环境变量表示的复杂配置（列表、嵌套结构）
+
+# ============================================
+# 学习配置
+# ============================================
+learning:
+  # 学习源配置（列表类型）
+  sources:
+    # GitHub Python 热门项目
+    - type: "github"
+      name: "Trending Python"
+      query: "language:python"
+
+    # PyPI 新包
+    - type: "pypi"
+      name: "PyPI New Packages"
+      url: "https://pypi.org"
+      filter_popular: true
+
+    # Python 官方博客
+    - type: "blog"
+      name: "Python Official Blog"
+      url: "https://blog.python.org"
+
+    # Real Python 教程
+    - type: "blog"
+      name: "Real Python"
+      url: "https://realpython.com"
+
+    # Hacker News Python 相关
+    - type: "news"
+      name: "Hacker News Python"
+      url: "https://hnr.cybrid.org/"
+
+  # 搜索查询列表
+  search_queries:
+    # 核心语言特性
+    - "Python 3.12 新特性详解"
+    - "Python type hints 最佳实践"
+    - "Python async await 异步编程"
+    - "Python decorator 装饰器高级用法"
+    - "Python context manager 上下文管理器"
+
+    # 设计模式
+    - "Python设计模式 单例模式 工厂模式"
+    - "Python Observer pattern 观察者模式"
+    - "Python Dependency Injection 依赖注入"
+
+    # 框架和工具
+    - "FastAPI 最佳实践 完整教程"
+    - "Pytest 测试技巧 高级用法"
+    - "Python performance optimization 性能优化"
+    - "Python memory management 内存管理"
+
+    # 编程实践
+    - "Python clean code 代码规范"
+    - "Python error handling 异常处理最佳实践"
+    - "Python logging 日志记录最佳实践"
+    - "Python unit testing 单元测试技巧"
+
+  # 学习重点领域
+  focus_areas:
+    - "async_programming"    # 异步编程
+    - "design_patterns"       # 设计模式
+    - "testing"               # 测试技术
+    - "performance"           # 性能优化
+    - "best_practices"        # 最佳实践
+    - "type_hints"            # 类型提示
+    - "data_structures"       # 数据结构
+    - "algorithms"            # 算法
+
+# ============================================
+# 日报配置
+# ============================================
+daily:
+  template: "config/prompts/daily_report.md"
+  include_code_examples: true
+
+# ============================================
+# CLI 配置
+# ============================================
+cli:
+  theme: "monokai"
+
+# ============================================
+# Git 配置
+# ============================================
+git:
+  auto_commit: true
+  commit_message_prefix: "[学习]"
+  repo_path: "./data"
